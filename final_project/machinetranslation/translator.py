@@ -14,22 +14,22 @@ language_translator = LanguageTranslatorV3(version='2018-05-01', authenticator=a
 
 language_translator.set_service_url(url)
 
-def englishToFrench(englishText):
+def english_to_french(english_text):
     '''
     This function translates a text from English to French
     '''
-    if englishText == '':
+    if english_text == '':
         return 'Please insert a text'
-    result = language_translator.translate(text=englishText, model_id='en-fr').get_result()
-    frenchText = result['translations'][0]['translation']
-    return frenchText
+    result = language_translator.translate(text=english_text, model_id='en-fr').get_result()
+    french_text = result['translations'][0]['translation']
+    return french_text
 
-def frenchToEnglish(frenchText):
+def french_to_english(french_text):
     '''
     This function translates a text from French to English
     '''
-    if frenchText == '':
+    if french_text == '':
         return 'Please insert a text'
-    result = language_translator.translate(text=frenchText, model_id='fr-en').get_result()
-    englishText = result['translations'][0]['translation']    
-    return englishText
+    result = language_translator.translate(text=french_text, model_id='fr-en').get_result()
+    english_text = result['translations'][0]['translation']    
+    return english_text
