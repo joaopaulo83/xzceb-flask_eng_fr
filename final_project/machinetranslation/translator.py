@@ -1,7 +1,10 @@
+'''
+This module contains functions that translate text
+'''
 import json
+import os
 from ibm_watson import LanguageTranslatorV3
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
-import os
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -31,5 +34,5 @@ def french_to_english(french_text):
     if french_text == '':
         return 'Please insert a text'
     result = language_translator.translate(text=french_text, model_id='fr-en').get_result()
-    english_text = result['translations'][0]['translation']    
+    english_text = result['translations'][0]['translation']
     return english_text
